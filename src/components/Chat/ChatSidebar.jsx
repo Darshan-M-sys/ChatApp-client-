@@ -1,20 +1,23 @@
 import React from "react";
 import { FaPlus } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
 
 const ChatSidebar = ({ chats = [], activeChat, setActiveChat }) => {
-  return (
-    <div className=" w-full md:w-72 h-screen bg-gray-900 text-white flex flex-col">
 
+  return (
+    <>
+
+    <div className="w-[320px]  md:w-72 h-screen bg-gray-900 text-white flex flex-col">
+      
       <div className="flex items-center justify-between p-4 border-b border-gray-700">
       <div className="p-4  border-gray-700 text-lg font-semibold">
         Chats
       </div>
-     <div className="text-xl text-gray-400 cursor-pointer hover:text-gray-200 transition">
+     <Link to="/invite/friends" className="text-xl text-gray-400 cursor-pointer hover:text-gray-200 transition">
         <FaPlus />
+      </Link>
       </div>
-      </div>
-     
-
       {/* Search */}
       <div className="p-3">
         <input
@@ -62,6 +65,7 @@ const ChatSidebar = ({ chats = [], activeChat, setActiveChat }) => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 

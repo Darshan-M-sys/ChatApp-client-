@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ChatSidebar from "./ChatSidebar";
-
+import { IoMenu } from "react-icons/io5";
+import { IoCloseSharp } from "react-icons/io5";
 const ChatPage = () => {
   const [activeChat, setActiveChat] = useState(null);
   const [messageInput, setMessageInput] = useState("");
@@ -62,7 +63,7 @@ const [menu,setMenuShow]=useState(false);
 
 
 { menu &&(
-    <div className="flex md:hidden">
+    <div className="flex md:hidden ">
       <ChatSidebar
         chats={chats}
         activeChat={activeChat}
@@ -72,8 +73,8 @@ const [menu,setMenuShow]=useState(false);
 </div>)}
 
       {/* Chat Area */}
-      <div className="flex-1 flex flex-col bg-gray-100">
-
+      <div className="flex-1 relative flex flex-col bg-gray-100">
+<p className={`text-3xl md:hidden fixed ${menu?"text-white":"text-black"} top-15 left-0 `} onClick={()=>setMenuShow(!menu)}>{!menu?(<IoMenu/>):(<IoCloseSharp/>)} </p>
         {activeChat ? (
           <>
             {/* Chat Header */}

@@ -7,10 +7,9 @@ const Chat = () => {
   return (
     <>
     <Header/>
-    <div>
-    
+  
       <ChatPage/>
-    </div>
+  
     </>
   )
 }
