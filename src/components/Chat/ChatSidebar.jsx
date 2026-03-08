@@ -40,18 +40,18 @@ const ChatSidebar = ({ chats = [], activeChat, setActiveChat }) => {
             {/* Avatar */}
             <div className="relative">
               <img
-                src={`https://ui-avatars.com/api/?name=${chat.name}`}
+                src={chat.profilePicture ||`https://ui-avatars.com/api/?name=${chat.fullName}`}
                 alt="avatar"
                 className="w-10 h-10 rounded-full"
               />
-              {chat.online && (
+              {chat.isOnline && (
                 <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-gray-900 rounded-full"></span>
               )}
             </div>
 
             {/* Name + Last Message */}
             <div className="flex-1">
-              <h3 className="text-sm font-semibold">{chat.name}</h3>
+              <h3 className="text-sm font-semibold">{chat.fullName}</h3>
               <p className="text-xs text-gray-400 truncate">
                 {chat.lastMessage}
               </p>

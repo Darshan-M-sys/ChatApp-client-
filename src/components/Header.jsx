@@ -41,9 +41,9 @@ const Header = () => {
           </>
         ) : (
           <>
-            <span>
+            <Link to="/notification">
               <IoNotifications/>
-            </span>
+            </Link>
             <span className="text-sm text-gray-300">
               Welcome
             </span>

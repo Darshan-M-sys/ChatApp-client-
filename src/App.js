@@ -8,6 +8,7 @@ import Home from './components/Home'
 import Chat from './components/Chat/Chat'
 import Profile from './components/Profile'
 import InviteFriends from './components/InviteFriends'
+import Notification from './components/Notification'
 
 const App = () => {
 
@@ -29,6 +30,7 @@ const App = () => {
         <Route path="/change-password" element={<ChangePassword  />} />
         <Route path="/profile"  element={<Profile user={profileData || {}}/>}/> 
         <Route path="/invite/friends" element={<InviteFriends/>}/>
+        <Route path="/notification" element={<Notification/>}/>
       </Routes>
     </div>
   )
